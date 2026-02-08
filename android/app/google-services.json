@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "400182360286",
+    "project_id": "somaliapps-1f24e",
+    "storage_bucket": "somaliapps-1f24e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:400182360286:android:285269672908b0b0a82a4f",
+        "android_client_info": {
+          "package_name": "com.ilyaas.appsstore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhQFDJ8fvFAr17wQgbob1KUMdqwl7mRYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

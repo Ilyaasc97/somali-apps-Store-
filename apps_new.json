@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Holy Quran App",
+        "description": "A comprehensive Quran application with audio recitations and translations.",
+        "iconUrl": "https://example.com/icon1.png",
+        "downloadUrl": "https://example.com/app1.apk",
+        "size": "45 MB",
+        "version": "2.1.0",
+        "developer": "Islamic Apps Ltd",
+        "rating": 4.8,
+        "packageName": "com.example.holyquran",
+        "screenshots": [
+            "https://example.com/screen1.jpg",
+            "https://example.com/screen2.jpg"
+        ]
+    },
+    {
+        "name": "Tafseer Ibn Kathir",
+        "description": "Complete Tafseer Ibn Kathir for deeper understanding of the Quran.",
+        "iconUrl": "https://example.com/icon2.png",
+        "downloadUrl": "https://example.com/app2.apk",
+        "size": "25 MB",
+        "version": "1.0.5",
+        "developer": "Knowledge Seekers",
+        "rating": 4.6,
+        "packageName": "com.example.tafseer",
+        "screenshots": [
+            "https://example.com/screen3.jpg",
+            "https://example.com/screen4.jpg"
+        ]
+    }
+]

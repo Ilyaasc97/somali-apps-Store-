@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // قواعد حماية مجموعة التطبيقات (apps collection)
+    match /apps/{appId} {
+      
+      // السماح للجميع بقرار بيانات التطبيقات (لفتح المتجر)
+      allow read: if true;
+      
+      // منع الحذف أو إنشاء تطبيقات جديدة من التطبيق نفسه (يتم فقط من لوحة تحكم الأدمن)
+      allow create, delete: if false;
+      
+      // السماح بالتحديث فقط لحقول معينة وبشروط محددة
+      allow update: if (
+        // التأكد من أن التعديل يشمل فقط الإحصائيات (التحميلات والتقييم)
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['downloadCount', 'rating', 'ratingSum', 'ratingCount', 'lastUpdate'])
+        && 
+        // منع تقليل عدد التحميلات (يسمح فقط بالزيادة)
+        (request.resource.data.downloadCount >= resource.data.downloadCount)
+        &&
+        // التأكد من أن التقييم الجديد يقع ضمن النطاق المنطقي (1-5)
+        (request.resource.data.rating >= 1 && request.resource.data.rating <= 5)
+      );
+    }
+
+    // منع الوصول لأي مجموعات أخرى بشكل افتراضي
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
